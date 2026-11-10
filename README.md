@@ -1,7 +1,6 @@
 # BSA Safety AB
 
-Ny webbplats för **BSA Safety AB**, ett certifierat brandskyddsföretag med bas i Västra
-Frölunda som hjälper företag och fastigheter i hela Sverige med brandlarm, kökssläcksystem,
+Ny webbplats för **BSA Safety AB**, ett certifierat brandskyddsföretag med bas i Göteborg som hjälper företag och fastigheter i hela Sverige med brandlarm, kökssläcksystem,
 rökluckor, brandtätning, brandposter, brandsläckare, utrymning, SBA och utbildning.
 
 Sidan är byggd med Vite, vanilla JavaScript och handskriven CSS. Den består av flera sidor
@@ -50,8 +49,8 @@ Bilder, logotyp, certifieringar, kontaktuppgifter och tjänstebeskrivningar är 
 [bsaab.se](https://bsaab.se/) och anpassade för den nya sidan. Instagram kräver inloggning och
 blockerade automatisk hämtning, så BSA Safetys eget bildmaterial från webbplatsen används i
 stället – samma typ av bilder som företaget publicerar på Instagram. Några tjänstebilder
-(rökdetektor, brandpostskåp, röklucka, brandtätning, utrymningsarmatur och brandsläckare) är
-produktbilder från öppna källor och produktleverantörer. Bilderna är beskurna och komprimerade
+(brandlarmscentral, restaurangkök, brandpostskåp, röklucka, brandtätning, utrymningsarmatur och
+brandsläckare) är produktbilder från öppna källor och produktleverantörer. Bilderna är beskurna och komprimerade
 till WebP/PNG i `assets/images/`.
 
 Kontaktformuläret skickar inte något till en server; det visar bara ett bekräftelseläge.

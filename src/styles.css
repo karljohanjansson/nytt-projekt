@@ -952,7 +952,7 @@ textarea {
 
 .why {
   padding-block: var(--section-y);
-  background: var(--red-soft);
+  background: #efefec;
 }
 
 .why__grid {
@@ -1114,7 +1114,7 @@ textarea {
 /* FAQ */
 
 .faq.section {
-  padding-top: calc(var(--section-y) * 0.35);
+  padding-top: calc(var(--section-y) * 0.1);
 }
 
 .faq__grid {
@@ -2032,10 +2032,6 @@ textarea {
   visibility: visible;
 }
 
-body.nav-open {
-  overflow: hidden;
-}
-
 /* Floating contact button */
 
 /* Breadcrumbs and page heroes */
@@ -2071,6 +2067,14 @@ body.nav-open {
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.page-hero__grid--single {
+  grid-template-columns: 1fr;
+}
+
+.page-hero__grid--single .page-hero__copy {
+  max-width: 760px;
 }
 
 .page-hero__copy h1 {
@@ -2339,6 +2343,51 @@ body.nav-open {
   font-size: 0.88rem;
   line-height: 1.6;
   color: var(--muted);
+}
+
+.course-card--image {
+  position: relative;
+  justify-content: flex-end;
+  min-height: 260px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  color: var(--bg);
+}
+
+.course-card__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-card--image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(18, 17, 16, 0.1) 0%, rgba(18, 17, 16, 0.86) 100%);
+}
+
+.course-card__content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+.course-card--image h3 {
+  color: var(--bg);
+  font-size: 1.15rem;
+}
+
+.course-card--image p {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(251, 248, 243, 0.84);
 }
 
 /* About page */
