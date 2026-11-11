@@ -17,16 +17,24 @@ function htmlPartials() {
 }
 
 export default defineConfig({
+  appType: "mpa",
   plugins: [htmlPartials()],
+  server: {
+    allowedHosts: [".trycloudflare.com"],
+  },
   build: {
     rollupOptions: {
       input: {
         main: resolve("index.html"),
         tjanster: resolve("tjanster.html"),
-        process: resolve("sa-funkar-det.html"),
         utbildning: resolve("utbildning.html"),
+        lar: resolve("lar-dig-om-brandskydd.html"),
         om: resolve("om-bsa.html"),
         kontakt: resolve("kontakt.html"),
+        kvalitet: resolve("kvalitetspolicy.html"),
+        miljo: resolve("miljopolicy.html"),
+        arbetsmiljo: resolve("arbetsmiljopolicy.html"),
+        integritet: resolve("integritetspolicy.html"),
       },
     },
   },

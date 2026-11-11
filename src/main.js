@@ -4,6 +4,8 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("#primary-nav");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navBackdrop = document.querySelector("[data-nav-backdrop]");
+const navSubToggle = document.querySelector("[data-nav-sub-toggle]");
+const navSubmenuItem = navSubToggle?.closest(".nav__item--has-sub");
 
 // Mark the current page in the navigation.
 
@@ -23,8 +25,17 @@ document.querySelectorAll(".nav a[href]").forEach((link) => {
 
 // Mobile menu drawer.
 
+function setSubmenu(open) {
+  if (!navSubToggle || !navSubmenuItem) return;
+  navSubmenuItem.classList.toggle("is-open", open);
+  navSubToggle.setAttribute("aria-expanded", String(open));
+  navSubToggle.setAttribute("aria-label", open ? "Dölj tjänster" : "Visa tjänster");
+}
+
 function setNav(open) {
   if (!nav || !navToggle) return;
+  if (open && window.matchMedia("(max-width: 980px)").matches) setSubmenu(true);
+  if (!open) setSubmenu(false);
   nav.classList.toggle("is-open", open);
   navBackdrop?.classList.toggle("is-open", open);
   document.body.classList.toggle("nav-open", open);
@@ -45,12 +56,32 @@ navToggle?.addEventListener("click", () => {
 
 navBackdrop?.addEventListener("click", () => setNav(false));
 
+navSubToggle?.addEventListener("click", () => {
+  setSubmenu(navSubToggle.getAttribute("aria-expanded") !== "true");
+});
+
+document.addEventListener("click", (event) => {
+  if (!navSubmenuItem) return;
+  if (navSubmenuItem.contains(event.target)) return;
+  if (navToggle?.contains(event.target)) return;
+  setSubmenu(false);
+});
+
 nav?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => setNav(false));
+  link.addEventListener("click", () => {
+    setNav(false);
+    setSubmenu(false);
+  });
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && nav?.classList.contains("is-open")) {
+  if (event.key !== "Escape") return;
+  if (navSubmenuItem?.classList.contains("is-open")) {
+    setSubmenu(false);
+    navSubToggle?.focus();
+    return;
+  }
+  if (nav?.classList.contains("is-open")) {
     setNav(false);
     navToggle?.focus();
   }
