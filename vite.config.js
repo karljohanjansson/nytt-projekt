@@ -20,10 +20,7 @@ export default defineConfig({
   appType: "mpa",
   plugins: [htmlPartials()],
   server: {
-    host: "127.0.0.1",
-    port: 5174,
-    strictPort: true,
-    allowedHosts: ["mighty-fox.taildb4ed8.ts.net"],
+    allowedHosts: [".trycloudflare.com"],
   },
   build: {
     rollupOptions: {
