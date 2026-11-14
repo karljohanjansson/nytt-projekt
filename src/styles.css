@@ -1295,9 +1295,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .faq__icon::after { width: 1px; height: 12px; transform: translate(-50%, -50%); }
 .faq__item.is-open .faq__icon::after { opacity: 0; }
 .faq__body {
-  padding: 0 0 1.5rem 0;
+  padding: 0.5rem 0 2rem 0;
   font-size: 0.9375rem;
-  line-height: 1.65;
+  line-height: 1.8;
   color: var(--muted);
   max-width: 70ch;
 }
