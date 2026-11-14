@@ -278,9 +278,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   padding: 0.4rem 0.7rem;
   font-size: 0.8125rem;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--ink);
   transition: color 0.2s ease;
   letter-spacing: 0.01em;
+  -webkit-mask-image: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
+  mask-image: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
 }
 
 .nav a:hover { color: var(--ink); }
@@ -343,6 +345,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
   transition: background 0.2s ease;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .nav__cta:hover { background: #a92a1d; color: #fff; }
