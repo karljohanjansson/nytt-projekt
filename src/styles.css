@@ -895,10 +895,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: 1rem;
 }
 .cert-card img {
-  max-height: 64px;
+  max-height: 80px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(1) brightness(1.6);
+  filter: none;
 }
 .cert-card h3 { font-size: 0.9375rem; font-weight: 500; }
 .cert-card p { font-size: 0.8125rem; color: var(--muted); line-height: 1.5; }
@@ -1016,15 +1016,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: 2.5rem;
 }
 .proof__logos img {
-  height: 32px;
+  height: 56px;
   width: auto;
-  filter: grayscale(1) brightness(1.6);
-  opacity: 0.7;
-  transition: opacity 0.2s ease, filter 0.2s ease;
+  filter: none;
+  opacity: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .proof__logos img:hover {
   opacity: 1;
-  filter: grayscale(0.5) brightness(1.2);
+  transform: scale(1.03);
 }
 
 /* ---------- Process / steps ---------- */
