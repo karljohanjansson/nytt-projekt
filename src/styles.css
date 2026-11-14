@@ -258,7 +258,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   display: block;
   width: 120px;
   height: auto;
-  filter: grayscale(1) brightness(1.8) contrast(1.1);
+  filter: brightness(0) invert(1);
 }
 
 /* ---------- Nav ---------- */
@@ -1485,7 +1485,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   max-width: 34ch;
 }
 .footer__brand .logo img {
-  filter: grayscale(1) brightness(1.8);
+  filter: brightness(0) invert(1);
   width: 110px;
 }
 .footer__col h2 {
