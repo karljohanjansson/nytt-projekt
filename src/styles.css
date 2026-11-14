@@ -452,7 +452,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, var(--bg) 0%, rgba(5, 6, 7, 0.6) 30%, rgba(5, 6, 7, 0.5) 70%, rgba(5,6,7,0.7) 100%),
+    linear-gradient(180deg, var(--bg) 0%, rgba(5, 6, 7, 0.75) 30%, rgba(5, 6, 7, 0.5) 70%, rgba(5,6,7,0.7) 100%),
     radial-gradient(ellipse at 30% 20%, var(--red-glow) 0%, transparent 55%);
   mix-blend-mode: normal;
 }
