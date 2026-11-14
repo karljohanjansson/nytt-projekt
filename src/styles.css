@@ -1043,7 +1043,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Process / steps ---------- */
 
 .process { padding: var(--section-y) 0; }
-.process__head { margin-bottom: clamp(3rem, 6vw, 5rem); }
+.process__head h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
 
 .steps {
   display: grid;
