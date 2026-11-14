@@ -189,12 +189,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .topbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1.5rem;
   min-height: var(--topbar-h);
   padding: 0 var(--gutter);
   max-width: var(--wrap-wide);
   margin: 0 auto;
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .topbar a {
