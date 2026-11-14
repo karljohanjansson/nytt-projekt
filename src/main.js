@@ -159,3 +159,22 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
   revealObserver.observe(el);
 });
+
+// Hero parallax (subtle, Apple-like).
+const heroBg = document.querySelector(".hero__bg img");
+if (heroBg) {
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        heroBg.style.transform = `translate3d(0, ${y * 0.25}px, 0) scale(1.15)`;
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+}
