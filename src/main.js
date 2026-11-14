@@ -143,11 +143,19 @@ form?.addEventListener("submit", (event) => {
   }
 });
 
-reset?.addEventListener("click", () => {
-  form?.reset();
-  if (success) success.hidden = true;
-  if (form) {
-    form.hidden = false;
-    form.querySelector("input")?.focus();
-  }
+// Scroll reveal.
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15, rootMargin: "0px 0px -80px 0px" },
+);
+
+document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
+  revealObserver.observe(el);
 });
