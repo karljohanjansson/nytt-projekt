@@ -162,7 +162,8 @@ document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
 
 // Hero parallax (subtle, Apple-like).
 const heroBg = document.querySelector(".hero__bg img");
-if (heroBg) {
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (heroBg && !prefersReduced) {
   let ticking = false;
   window.addEventListener(
     "scroll",
@@ -178,3 +179,62 @@ if (heroBg) {
     { passive: true },
   );
 }
+
+// Scroll progress hairline (Linear-style, top of viewport).
+const progressBar = document.querySelector("[data-scroll-progress]");
+if (progressBar) {
+  let progressTicking = false;
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = max > 0 ? window.scrollY / max : 0;
+    progressBar.style.width = `${(ratio * 100).toFixed(2)}%`;
+    progressTicking = false;
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (progressTicking) return;
+      progressTicking = true;
+      requestAnimationFrame(updateProgress);
+    },
+    { passive: true },
+  );
+  updateProgress();
+}
+
+// Scrollspy: highlight the section currently in view (nav).
+const currentSection = (() => {
+  const links = [...document.querySelectorAll(".nav a[href*='#']")].filter((a) =>
+    (a.getAttribute("href") || "").includes(currentPage) ||
+    (a.getAttribute("href") || "").startsWith("#"),
+  );
+  if (!links.length || currentPage !== "index") return null;
+
+  const byId = new Map();
+  links.forEach((link) => {
+    const id = (link.getAttribute("href") || "").split("#")[1];
+    if (id && document.getElementById(id)) byId.set(id, link);
+  });
+  if (!byId.size) return null;
+
+  const setActive = (id) => {
+    byId.forEach((link) => link.classList.remove("is-current"));
+    const link = byId.get(id);
+    if (link) link.classList.add("is-current");
+  };
+
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px" },
+  );
+  byId.forEach((_, id) => {
+    const el = document.getElementById(id);
+    if (el) spy.observe(el);
+  });
+  return true;
+})();
+
