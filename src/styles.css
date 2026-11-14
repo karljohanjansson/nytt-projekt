@@ -1005,9 +1005,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .proof__label {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .proof__logos {
@@ -1018,7 +1018,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: 2.5rem;
 }
 .proof__logos img {
-  height: 72px;
+  height: 96px;
   width: auto;
   filter: none;
   opacity: 1;
