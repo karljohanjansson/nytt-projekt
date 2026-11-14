@@ -36,6 +36,27 @@ function setNav(open) {
   if (!nav || !navToggle) return;
   if (open && window.matchMedia("(max-width: 980px)").matches) setSubmenu(true);
   if (!open) setSubmenu(false);
+
+  // Lock body scroll without breaking sticky header (position:fixed technique).
+  if (open) {
+    const scrollY = window.scrollY;
+    document.body.dataset.scrollY = String(scrollY);
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  } else {
+    const scrollY = parseInt(document.body.dataset.scrollY || "0", 10);
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    delete document.body.dataset.scrollY;
+    window.scrollTo({ top: scrollY, behavior: "instant" });
+  }
+
   nav.classList.toggle("is-open", open);
   navBackdrop?.classList.toggle("is-open", open);
   document.body.classList.toggle("nav-open", open);
@@ -45,7 +66,7 @@ function setNav(open) {
   if (open) {
     window.setTimeout(() => {
       const first = nav.querySelector("a");
-      first?.focus();
+      first?.focus({ preventScroll: true });
     }, 80);
   }
 }

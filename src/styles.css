@@ -51,10 +51,6 @@ body {
   overflow-x: clip;
 }
 
-body.nav-open {
-  overflow: hidden;
-}
-
 ::selection {
   background: var(--red);
   color: #fff;
@@ -2338,17 +2334,17 @@ a.contact-row:hover .contact-row__arrow {
   padding: 0;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid var(--ink);
+  border: 1px solid #2c2e35;
   border-radius: 50%;
-  background: var(--ink);
+  background: #2c2e35;
   color: var(--bg);
   cursor: pointer;
   transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
 .nav-toggle:hover {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: #2c2e35;
+  border-color: #2c2e35;
 }
 
 .nav-toggle[aria-expanded="true"] {
@@ -2818,7 +2814,7 @@ a.contact-row:hover .contact-row__arrow {
 
 .value-card {
   padding: 1.5rem;
-  border-top: 3px solid var(--ink);
+  border-top: 3px solid #007a33;
   border-radius: 0 0 16px 16px;
   background: var(--surface);
 }
