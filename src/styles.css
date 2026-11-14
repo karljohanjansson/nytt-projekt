@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --bg: #050607;
-  --bg-2: #0a0b0d;
+  --bg: #0a0b0d;
+  --bg-2: #0f1012;
   --surface: transparent;
   --surface-2: rgba(255, 255, 255, 0.02);
   --surface-3: rgba(255, 255, 255, 0.04);
@@ -39,9 +39,9 @@
   --section-y: clamp(6rem, 11vw, 11rem);
   --section-y-sm: clamp(4rem, 7vw, 6.5rem);
 
-  --radius: 12px;
-  --radius-sm: 8px;
-  --radius-lg: 16px;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-lg: 24px;
 
   --topbar-h: 38px;
   --header-h: 64px;
@@ -68,7 +68,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 77, 61, 0.06) 0%, transparent 60%),
+    var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -716,7 +718,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .page-hero__media img {
@@ -796,7 +798,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
   background: var(--bg);
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .service-card__media img {
   width: 100%;
@@ -863,7 +865,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   flex-direction: column;
   justify-content: flex-end;
   padding: 2rem 1.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .course-card__bg {
   position: absolute;
@@ -1212,7 +1214,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   aspect-ratio: 4 / 5;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .service-detail__media img {
   width: 100%;
@@ -1657,7 +1659,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   filter: grayscale(0.55) contrast(1.2) brightness(0.6);
   transform: scale(1.3);
   transition: filter 0.4s ease, transform 8s ease;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .gallery-grid img:hover {
   filter: grayscale(0.4) contrast(1.15) brightness(0.75);
@@ -1819,7 +1821,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
   background: var(--bg);
   border: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   min-height: 420px;
   display: flex;
 }
@@ -1829,7 +1831,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   margin: 0;
   aspect-ratio: auto;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .service-featured .service-card__media img {
@@ -1894,7 +1896,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
   background: var(--bg);
   border: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   min-height: 320px;
   display: flex;
 }
@@ -1904,7 +1906,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   margin: 0;
   aspect-ratio: auto;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .service-grid .service-card__media img {
