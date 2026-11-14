@@ -1510,6 +1510,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   transition: color 0.2s ease;
   display: inline-block;
 }
+
+.footer__col p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
 .footer__col a:hover { color: var(--ink); }
 .footer__bottom {
   margin-top: 3rem;
