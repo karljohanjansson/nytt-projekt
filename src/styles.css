@@ -176,6 +176,107 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .eyebrow--red { color: var(--red); }
 .eyebrow--red::before { background: var(--red); }
 
+/* ---------- Announcement pill (Linear style) ---------- */
+
+.announce {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.7rem;
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  transition: border-color 0.2s ease, color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.announce:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.announce__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+}
+
+/* ---------- Footer CTA band ---------- */
+
+.footer-cta {
+  padding: var(--section-y-sm) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 50% 0%, var(--red-glow) 0%, transparent 60%),
+    var(--bg);
+  text-align: center;
+}
+
+.footer-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.footer-cta h2 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.footer-cta p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 48ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-cta__actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* ---------- Status pills ---------- */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface-2);
+}
+
+.pill__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.pill--red .pill__dot { background: var(--red); }
+.pill--green .pill__dot { background: var(--green); }
+.pill--yellow .pill__dot { background: var(--yellow); }
+
 /* ---------- Topbar ---------- */
 
 .topbar {
@@ -1986,7 +2087,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-bottom: 1px solid var(--line);
 }
 .feature:last-child { border-right: 0; }
-.feature .eyebrow { margin-bottom: 1.5rem; }
+.feature .eyebrow { margin-bottom: 1rem; }
+.feature .pill { margin-bottom: 1.25rem; }
 .feature h3 {
   font-size: 1.25rem;
   font-weight: 500;
@@ -2106,32 +2208,48 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Testimonial (Linear style) ---------- */
 
 .testimonial { padding: var(--section-y) 0; border-top: 1px solid var(--line); }
+.testimonial__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
 .testimonial__quote {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.3;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
   color: var(--ink);
   margin: 0;
   quotes: none;
+  position: relative;
 }
-.testimonial__quote::before { content: "\201C"; color: var(--red); margin-right: 0.1em; }
+.testimonial__quote-mark {
+  color: var(--red);
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 0.05em;
+}
 .testimonial__attr {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 .testimonial__name {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--ink);
 }
 .testimonial__role {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--muted);
   font-family: var(--font-mono);
   letter-spacing: 0.04em;
+}
+
+@media (max-width: 980px) {
+  .testimonial__grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 980px) {
