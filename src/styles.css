@@ -336,6 +336,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   padding: 0.5rem 1.1rem;
   background: var(--red);
   color: #fff;
+  border-radius: 999px;
   font-weight: 500;
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
@@ -527,6 +528,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--line-strong);
   background: transparent;
   color: var(--ink);
+  border-radius: 999px;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
   white-space: nowrap;
   cursor: pointer;
