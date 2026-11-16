@@ -34,7 +34,6 @@ function setSubmenu(open) {
 
 function setNav(open) {
   if (!nav || !navToggle) return;
-  if (open && window.matchMedia("(max-width: 980px)").matches) setSubmenu(true);
   if (!open) setSubmenu(false);
 
   // Lock body scroll without breaking sticky header (position:fixed technique).
@@ -144,41 +143,21 @@ form?.addEventListener("submit", (event) => {
 });
 
 // Scroll reveal.
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15, rootMargin: "0px 0px -80px 0px" },
-);
+document.documentElement.classList.add("js");
 
-document.querySelectorAll(".reveal, .reveal-stagger").forEach((el) => {
-  revealObserver.observe(el);
-});
+const revealTargets = [...document.querySelectorAll(".reveal, .reveal-stagger")];
 
-// Hero parallax (subtle, Apple-like).
-const heroBg = document.querySelector(".hero__bg img");
-const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (heroBg && !prefersReduced) {
-  let ticking = false;
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        heroBg.style.transform = `translate3d(0, ${y * 0.25}px, 0) scale(1.15)`;
-        ticking = false;
-      });
-    },
-    { passive: true },
-  );
+function revealVisible() {
+  const limit = window.innerHeight * 0.95;
+  revealTargets.forEach((el) => {
+    if (el.classList.contains("is-visible")) return;
+    if (el.getBoundingClientRect().top < limit) el.classList.add("is-visible");
+  });
 }
+
+revealVisible();
+window.addEventListener("scroll", revealVisible, { passive: true });
+window.addEventListener("resize", revealVisible, { passive: true });
 
 // Scroll progress hairline (Linear-style, top of viewport).
 const progressBar = document.querySelector("[data-scroll-progress]");
@@ -201,40 +180,4 @@ if (progressBar) {
   );
   updateProgress();
 }
-
-// Scrollspy: highlight the section currently in view (nav).
-const currentSection = (() => {
-  const links = [...document.querySelectorAll(".nav a[href*='#']")].filter((a) =>
-    (a.getAttribute("href") || "").includes(currentPage) ||
-    (a.getAttribute("href") || "").startsWith("#"),
-  );
-  if (!links.length || currentPage !== "index") return null;
-
-  const byId = new Map();
-  links.forEach((link) => {
-    const id = (link.getAttribute("href") || "").split("#")[1];
-    if (id && document.getElementById(id)) byId.set(id, link);
-  });
-  if (!byId.size) return null;
-
-  const setActive = (id) => {
-    byId.forEach((link) => link.classList.remove("is-current"));
-    const link = byId.get(id);
-    if (link) link.classList.add("is-current");
-  };
-
-  const spy = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    },
-    { rootMargin: "-40% 0px -55% 0px" },
-  );
-  byId.forEach((_, id) => {
-    const el = document.getElementById(id);
-    if (el) spy.observe(el);
-  });
-  return true;
-})();
 
