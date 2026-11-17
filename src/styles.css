@@ -1020,6 +1020,25 @@ ol {
   background: var(--bg-2);
   border-radius: var(--radius);
   padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  color: #1d1d1f;
+}
+
+/* Klint-inspired palette for the four steps */
+.steps .step:nth-child(1) { background: #aebfdd; }
+.steps .step:nth-child(2) { background: #ecc99b; }
+.steps .step:nth-child(3) { background: #adb98b; }
+.steps .step:nth-child(4) { background: #ce8a66; }
+
+.steps .step h3 {
+  color: #1d1d1f;
+}
+
+.steps .step .step__body::before {
+  color: rgba(29, 29, 31, 0.75);
+}
+
+.steps .step p {
+  color: #26262a;
 }
 
 .step__body h3 {
