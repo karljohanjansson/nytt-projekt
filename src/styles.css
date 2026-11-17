@@ -897,6 +897,15 @@ ol {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #000000;
+}
+
+.services .service-card__media img.img-fade {
+  opacity: 0;
+}
+
+.services .service-card__media img.img-fade.is-loaded {
+  opacity: 1;
 }
 
 .service-card--featured .service-card__media {
@@ -907,7 +916,8 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .service-card:hover .service-card__media img {
@@ -2341,11 +2351,14 @@ a.contact-row__value:hover {
   .nav__item--has-sub.is-open .nav__submenu a:nth-child(8) { animation-delay: 0.21s; }
 
   .nav a {
-    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    padding: 0;
     font-size: 1.75rem;
     font-weight: 600;
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.3;
     border-radius: 0;
     border-bottom: 0;
   }
@@ -2365,6 +2378,10 @@ a.contact-row__value:hover {
     gap: 0.35rem;
   }
 
+  .nav__parent-row .nav__parent {
+    flex: 1;
+  }
+
   .nav__sub-toggle {
     width: 2.5rem;
     height: 2.5rem;
@@ -2381,7 +2398,7 @@ a.contact-row__value:hover {
   .nav__submenu {
     position: static;
     min-width: 0;
-    padding: 0 0 0.75rem 0.1rem;
+    padding: 0 0 0 0.1rem;
     border: 0;
     box-shadow: none;
     background: transparent;
@@ -2399,9 +2416,11 @@ a.contact-row__value:hover {
   }
 
   .nav__submenu a {
-    padding: 0.4rem 0;
+    min-height: 54px;
+    padding: 0;
     font-size: 1.0625rem;
     font-weight: 500;
+    line-height: 1.3;
     color: var(--muted);
     border-bottom: 0;
   }

@@ -159,6 +159,34 @@ revealVisible();
 window.addEventListener("scroll", revealVisible, { passive: true });
 window.addEventListener("resize", revealVisible, { passive: true });
 
+// Service images fade in from black (Linear-style).
+const fadeImages = [
+  ...document.querySelectorAll(".services .service-card__media img"),
+];
+
+if (fadeImages.length) {
+  fadeImages.forEach((img) => img.classList.add("img-fade"));
+
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const img = entry.target;
+        fadeObserver.unobserve(img);
+        const show = () => img.classList.add("is-loaded");
+        if (img.complete) {
+          requestAnimationFrame(show);
+        } else {
+          img.addEventListener("load", show, { once: true });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+
+  fadeImages.forEach((img) => fadeObserver.observe(img));
+}
+
 // Scroll progress hairline (Linear-style, top of viewport).
 const progressBar = document.querySelector("[data-scroll-progress]");
 if (progressBar) {
