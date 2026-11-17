@@ -159,32 +159,27 @@ revealVisible();
 window.addEventListener("scroll", revealVisible, { passive: true });
 window.addEventListener("resize", revealVisible, { passive: true });
 
-// Service images fade in from black (Linear-style).
-const fadeImages = [
-  ...document.querySelectorAll(".services .service-card__media img"),
-];
+// Service cards fade in from black, staggered like Linear's tile grid.
+const serviceCards = [...document.querySelectorAll(".services .service-card")];
 
-if (fadeImages.length) {
-  fadeImages.forEach((img) => img.classList.add("img-fade"));
-
-  const fadeObserver = new IntersectionObserver(
+if (serviceCards.length) {
+  const cardObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        const img = entry.target;
-        fadeObserver.unobserve(img);
-        const show = () => img.classList.add("is-loaded");
-        if (img.complete) {
-          requestAnimationFrame(show);
-        } else {
-          img.addEventListener("load", show, { once: true });
-        }
+        const card = entry.target;
+        const index = serviceCards.indexOf(card);
+        cardObserver.unobserve(card);
+        window.setTimeout(
+          () => card.classList.add("is-shown"),
+          (index % 4) * 90,
+        );
       });
     },
-    { threshold: 0.12 },
+    { threshold: 0.15 },
   );
 
-  fadeImages.forEach((img) => fadeObserver.observe(img));
+  serviceCards.forEach((card) => cardObserver.observe(card));
 }
 
 // Scroll progress hairline (Linear-style, top of viewport).
