@@ -453,8 +453,8 @@ ol {
 
 .nav a {
   padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--ink);
   border-radius: var(--radius-pill);
   transition: color 0.2s ease, background 0.2s ease;
@@ -469,7 +469,7 @@ ol {
 .nav a[aria-current="page"],
 .nav a.is-current {
   color: var(--accent);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav__item--has-sub {
@@ -534,7 +534,8 @@ ol {
 .nav__submenu a {
   padding: 0.5rem 0.75rem;
   border-radius: 10px;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
 }
 
 .nav__submenu a:hover {
@@ -2289,7 +2290,8 @@ a.contact-row__value:hover {
 
   .nav a {
     padding: 0.85rem 0;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
     border-radius: 0;
     border-bottom: 1px solid var(--line-soft);
   }
