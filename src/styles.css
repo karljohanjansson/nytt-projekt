@@ -792,6 +792,51 @@ ol {
   );
 }
 
+/* Dark hero variant */
+
+.hero--dark {
+  background: #000000;
+  color: #f5f5f7;
+}
+
+.hero--dark h1 {
+  color: #f5f5f7;
+}
+
+.hero--dark .hero__lede {
+  color: #a1a1a6;
+}
+
+.hero--dark .hero__note {
+  color: #8e8e93;
+}
+
+.hero--dark .announce {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f5f7;
+}
+
+.hero--dark .announce:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.hero--dark .btn--ghost {
+  color: #f5f5f7;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.hero--dark .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
+.hero--dark .hero__bg img {
+  opacity: 0.7;
+  filter: none;
+}
+
 /* ---------- Proof strip ---------- */
 
 .proof {
