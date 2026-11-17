@@ -2266,34 +2266,35 @@ a.contact-row__value:hover {
 
   .nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 160;
-    width: min(400px, 100%);
+    width: 100%;
+    height: 100dvh;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 5.5rem 1.75rem 2rem;
-    background: var(--bg);
-    border-left: 1px solid var(--line-soft);
-    box-shadow: -24px 0 60px rgba(0, 0, 0, 0.12);
-    transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+    padding: 6.5rem 1.75rem 2rem;
+    background: #fbfbfd;
+    border: 0;
+    box-shadow: none;
+    transform: translateY(-100%);
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
     overflow-y: auto;
     margin-left: 0;
   }
 
   .nav.is-open {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .nav a {
-    padding: 0.85rem 0;
-    font-size: 1.0625rem;
+    padding: 0.5rem 0;
+    font-size: 1.75rem;
     font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
     border-radius: 0;
-    border-bottom: 1px solid var(--line-soft);
+    border-bottom: 0;
   }
 
   .nav a:hover {
@@ -2302,27 +2303,32 @@ a.contact-row__value:hover {
   }
 
   .nav__item--has-sub {
-    border-bottom: 1px solid var(--line-soft);
-  }
-
-  .nav__item--has-sub .nav__parent {
     border-bottom: 0;
   }
 
   .nav__parent-row {
+    width: 100%;
     justify-content: space-between;
+    gap: 0.35rem;
   }
 
   .nav__sub-toggle {
-    width: 2.25rem;
-    height: 2.25rem;
-    border: 1px solid var(--line);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    margin-left: auto;
+    color: var(--muted);
+  }
+
+  .nav__chevron {
+    width: 0.6rem;
+    height: 0.6rem;
   }
 
   .nav__submenu {
     position: static;
     min-width: 0;
-    padding: 0 0 0.75rem;
+    padding: 0 0 0.75rem 0.1rem;
     border: 0;
     box-shadow: none;
     background: transparent;
@@ -2337,14 +2343,59 @@ a.contact-row__value:hover {
   }
 
   .nav__submenu a {
-    padding: 0.55rem 0;
-    font-size: 0.9375rem;
+    padding: 0.4rem 0;
+    font-size: 1.0625rem;
+    font-weight: 500;
     color: var(--muted);
     border-bottom: 0;
   }
 
+  .nav__submenu a:hover {
+    color: var(--accent);
+  }
+
+  .nav-backdrop {
+    display: none;
+  }
+
   .nav-toggle {
     display: inline-flex;
+    border: 0;
+    background: transparent;
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-toggle:hover {
+    background: transparent;
+    border: 0;
+  }
+
+  .nav-toggle__icon {
+    width: 20px;
+    height: 12px;
+  }
+
+  .nav-toggle__icon::before {
+    top: 0;
+  }
+
+  .nav-toggle__icon::after {
+    top: 10px;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle__icon::before,
+  .nav-toggle[aria-expanded="true"] .nav-toggle__icon::after {
+    top: 5px;
+  }
+
+  body.nav-open .header .logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .header .logo {
+    transition: opacity 0.2s ease;
   }
 
   .header__actions {
