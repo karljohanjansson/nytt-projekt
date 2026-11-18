@@ -823,7 +823,10 @@ body[data-page="start"] .hero__smoke {
 }
 
 body[data-page="start"] .header:not(.is-scrolled) {
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 /* Dark hero variant */
