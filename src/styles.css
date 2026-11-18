@@ -1138,7 +1138,15 @@ body[data-page="start"] .header {
 .steps .step:nth-child(4) p { color: #ffffff; }
 
 .steps .step h3 {
-  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .steps .step .step__body::before {
@@ -1149,7 +1157,15 @@ body[data-page="start"] .header {
 }
 
 .steps .step p {
-  color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .step__body h3 {
