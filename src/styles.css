@@ -2306,8 +2306,17 @@ a.contact-row__value:hover {
   color: #ffffff;
 }
 
-.faq__intro h2 {
-  color: #ffffff;
+.faq__intro h2,
+.faq__list summary {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .faq__intro p {
