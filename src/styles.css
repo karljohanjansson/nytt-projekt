@@ -1075,6 +1075,7 @@ ol {
 .steps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 12px;
 }
 
@@ -1096,7 +1097,10 @@ ol {
 }
 
 .steps .step .step__body::before {
-  color: rgba(29, 29, 31, 0.75);
+  background: transparent;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
 }
 
 .steps .step p {
@@ -1112,11 +1116,12 @@ ol {
   content: attr(data-index);
   display: block;
   margin-bottom: 1.25rem;
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   line-height: 1;
-  color: var(--accent);
+  color: #ffffff;
+  background: transparent;
 }
 
 .step__body p {
