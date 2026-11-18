@@ -956,32 +956,6 @@ body[data-page="start"] .header {
   transform: scale(1.04);
 }
 
-.service-card__media::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0) 42%
-    ),
-    radial-gradient(
-      ellipse at 50% 52%,
-      rgba(0, 0, 0, 0) 8%,
-      rgba(0, 0, 0, 0.78) 52%,
-      rgba(0, 0, 0, 1) 84%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.8) 4%,
-      rgba(0, 0, 0, 0) 18%
-    );
-  pointer-events: none;
-}
-
 .service-card__media::after {
   content: "";
   position: absolute;
