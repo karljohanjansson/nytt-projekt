@@ -406,6 +406,16 @@ ol {
   width: 118px;
   height: auto;
   filter: brightness(0) invert(1);
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
 }
 
 .logo--footer img {
