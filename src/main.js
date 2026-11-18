@@ -111,10 +111,15 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 980) setNav(false);
 });
 
-// Sticky header shadow.
+// Sticky header: smooth, continuous darkening (no red flash on scroll).
 
 function updateHeader() {
-  header?.classList.toggle("is-scrolled", window.scrollY > 8);
+  const y = window.scrollY;
+  if (currentPage === "index") {
+    const alpha = Math.min(0.9, Math.max(0, y / 70));
+    header?.style.setProperty("--header-alpha", alpha.toFixed(3));
+  }
+  header?.classList.toggle("is-scrolled", y > 24);
 }
 
 updateHeader();
