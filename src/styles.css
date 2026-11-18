@@ -2537,8 +2537,8 @@ a.contact-row__value:hover {
   }
 
   .nav__chevron {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 0.875rem;
+    height: 0.875rem;
     border-right-width: 2px;
     border-bottom-width: 2px;
   }
