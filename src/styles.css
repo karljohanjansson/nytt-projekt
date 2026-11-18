@@ -719,6 +719,19 @@ ol {
   filter: brightness(0.4) saturate(1.05) contrast(1.05);
 }
 
+.hero__smoke::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.6) 80%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
 .hero__content {
   position: relative;
   z-index: 1;
