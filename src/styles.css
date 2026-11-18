@@ -1196,17 +1196,19 @@ ol {
 
 .course-list a::after {
   content: "";
-  width: 26px;
-  height: 20px;
+  width: 30px;
+  height: 23px;
   flex-shrink: 0;
   background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 27'%3E%3Cpath d='M0 10h16.5L7 0l28 13.5L7 27l9.5-9H0z'/%3E%3C/svg%3E")
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 27'%3E%3Cpath d='M0 9.4h6.8V0l28.2 13.5L6.8 27v-9.4H0z'/%3E%3C/svg%3E")
     center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 27'%3E%3Cpath d='M0 10h16.5L7 0l28 13.5L7 27l9.5-9H0z'/%3E%3C/svg%3E")
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 27'%3E%3Cpath d='M0 9.4h6.8V0l28.2 13.5L6.8 27v-9.4H0z'/%3E%3C/svg%3E")
     center / contain no-repeat;
   color: var(--muted-2);
   transition: transform 0.2s ease, color 0.2s ease;
 }
+
+
 
 .course-list a:hover {
   color: var(--accent);
