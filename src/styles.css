@@ -2299,6 +2299,47 @@ a.contact-row__value:hover {
   color: var(--muted);
 }
 
+/* ---------- FAQ red theme ---------- */
+
+.faq {
+  background: #c93626;
+  color: #ffffff;
+}
+
+.faq__intro h2 {
+  color: #ffffff;
+}
+
+.faq__intro p {
+  color: #ffffff;
+}
+
+.faq__list {
+  border-top-color: rgba(255, 255, 255, 0.25);
+}
+
+.faq__list details {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.faq__list summary {
+  color: #ffffff;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+details[open] .faq__icon::before,
+details[open] .faq__icon::after {
+  background: #ffffff;
+}
+
+.faq__body p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* ---------- Reveal on scroll ---------- */
 
 .js .reveal {
