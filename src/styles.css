@@ -794,6 +794,22 @@ ol {
   );
 }
 
+/* Startsidans hero går hela vägen upp bakom topbar och header */
+
+body[data-page="start"] .hero {
+  margin-top: calc(-1 * (var(--topbar-h) + var(--header-h)));
+  padding-top: calc(var(--topbar-h) + var(--header-h) + clamp(3.5rem, 7vw, 6rem));
+}
+
+body[data-page="start"] .topbar {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+body[data-page="start"] .header:not(.is-scrolled) {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 /* Dark hero variant */
 
 .hero--dark {
@@ -2651,6 +2667,10 @@ a.contact-row__value:hover {
   .logo img { width: 100px; }
 
   .hero { padding-top: 2.5rem; }
+
+  body[data-page="start"] .hero {
+    padding-top: calc(var(--topbar-h) + var(--header-h) + 2.5rem);
+  }
   .hero h1 { font-size: clamp(2.375rem, 10vw, 3.25rem); }
   .hero__actions {
     gap: 0.5rem;
