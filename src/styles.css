@@ -1132,21 +1132,23 @@ body[data-page="start"] .header {
 
 /* Klint-inspired palette for the four steps */
 .steps .step:nth-child(1) { background: #0066cc; }
+.steps .step:nth-child(1) h3,
+.steps .step:nth-child(1) .step__body::before { color: #ffffff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25); }
+.steps .step:nth-child(1) p { color: rgba(255, 255, 255, 0.92); }
 .steps .step:nth-child(2) { background: #ffcc00; }
 .steps .step:nth-child(3) { background: #1d6a4a; }
+.steps .step:nth-child(3) h3,
+.steps .step:nth-child(3) .step__body::before { color: #ffffff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25); }
+.steps .step:nth-child(3) p { color: rgba(255, 255, 255, 0.92); }
 .steps .step:nth-child(4) { background: #8b1a12; }
+.steps .step:nth-child(4) h3,
+.steps .step:nth-child(4) .step__body::before { color: #ffffff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25); }
+.steps .step:nth-child(4) p { color: rgba(255, 255, 255, 0.92); }
 .steps .step:nth-child(4) p { color: #ffffff; }
 
 .steps .step h3 {
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.62) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #1d1d1f;
+  font-weight: 700;
 }
 
 .steps .step .step__body::before {
@@ -1157,15 +1159,7 @@ body[data-page="start"] .header {
 }
 
 .steps .step p {
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.62) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #26262a;
 }
 
 .step__body h3 {
