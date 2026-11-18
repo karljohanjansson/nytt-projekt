@@ -1160,6 +1160,18 @@ body[data-page="start"] .header {
   color: #ffffff;
 }
 
+.training.section--dark .training__copy h2 {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 .training.section--dark .course-list li {
   border-color: rgba(255, 255, 255, 0.22);
 }
