@@ -835,11 +835,27 @@ body[data-page="start"] .header:not(.is-scrolled) {
 
 .hero--dark h1 {
   font-weight: 500;
-  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .hero--dark .hero__lede {
   color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.62) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero--dark .hero__note {
