@@ -2590,9 +2590,12 @@ details[open] .faq__icon::after {
     outline-color: #1d1d1f;
   }
 
+  .nav__sub-toggle,
+  .nav__sub-toggle:focus,
   .nav__sub-toggle:focus-visible,
+  .nav__parent:focus,
   .nav__parent:focus-visible {
-    outline-color: #1d1d1f;
+    outline: none;
   }
 
   .nav a:hover {
