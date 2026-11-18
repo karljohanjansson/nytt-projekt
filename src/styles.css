@@ -2489,6 +2489,12 @@ a.contact-row__value:hover {
     color: #1d1d1f;
     border-radius: 0;
     border-bottom: 0;
+    outline-color: #1d1d1f;
+  }
+
+  .nav__sub-toggle:focus-visible,
+  .nav__parent:focus-visible {
+    outline-color: #1d1d1f;
   }
 
   .nav a:hover {
