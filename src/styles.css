@@ -378,7 +378,7 @@ ol {
   top: 0;
   z-index: 200;
   height: var(--header-h);
-  background: rgba(0, 0, 0, var(--header-alpha, 0.92));
+  background: rgba(0, 0, 0, var(--header-alpha, 0.72));
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -386,6 +386,7 @@ ol {
 }
 
 .header.is-scrolled {
+  background: rgba(0, 0, 0, 0.72);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
