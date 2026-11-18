@@ -858,14 +858,17 @@ body[data-page="start"] .header {
 }
 
 .hero--dark .btn--ghost {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.28);
+  background: #ffffff;
+  color: #c93626;
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(201, 54, 38, 0.28);
 }
 
 .hero--dark .btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #ffffff;
+  background: #f5f5f7;
+  color: #a92a1d;
+  border-color: #f5f5f7;
+  box-shadow: 0 6px 20px rgba(201, 54, 38, 0.34);
 }
 
 .hero--dark .hero__bg img {
