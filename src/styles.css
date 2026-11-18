@@ -804,7 +804,7 @@ body[data-page="start"] .hero {
 body[data-page="start"] .hero__top {
   position: relative;
   padding-top: calc(var(--header-h) + clamp(3.5rem, 7vw, 6rem));
-  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
 }
 
 body[data-page="start"] .hero__bg {
