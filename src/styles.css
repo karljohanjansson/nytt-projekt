@@ -1056,13 +1056,9 @@ body[data-page="start"] .header {
 }
 
 .service-card__overlay h3 {
-  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
   color: #ffffff;
   letter-spacing: -0.02em;
-}
-
-.service-card--featured .service-card__overlay h3 {
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
 }
 
 .service-card__overlay p {
