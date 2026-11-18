@@ -1164,7 +1164,7 @@ body[data-page="start"] .header {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    rgba(255, 255, 255, 0.62) 100%
+    rgba(255, 255, 255, 0.8) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -2323,7 +2323,7 @@ a.contact-row__value:hover {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    rgba(255, 255, 255, 0.62) 100%
+    rgba(255, 255, 255, 0.8) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
