@@ -911,7 +911,7 @@ body[data-page="start"] .header {
 }
 
 .proof__logos img {
-  height: clamp(340px, 40vw, 520px);
+  height: clamp(480px, 55vw, 720px);
   width: auto;
   object-fit: contain;
 }
