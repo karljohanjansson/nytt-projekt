@@ -736,22 +736,26 @@ ol {
   inset: 0;
   background-image: url("/assets/images/hero-bg.webp");
   background-repeat: no-repeat;
-  background-position: 50% 100%;
-  background-size: 220% auto;
-  opacity: 0.46;
-  filter: brightness(0.5) saturate(0.85) contrast(1.05);
+  background-position: 50% 72%;
+  background-size: 260% auto;
+  opacity: 0.68;
+  filter: brightness(0.6) saturate(0.85) contrast(1.05);
   -webkit-mask-image: radial-gradient(
-    ellipse at 50% 55%,
-    #000 0%,
-    rgba(0, 0, 0, 0.55) 55%,
-    transparent 80%
-  );
+      ellipse at 50% 45%,
+      #000 0%,
+      rgba(0, 0, 0, 0.6) 58%,
+      transparent 82%
+    ),
+    linear-gradient(180deg, transparent 0%, #000 16%);
+  -webkit-mask-composite: source-in;
   mask-image: radial-gradient(
-    ellipse at 50% 55%,
-    #000 0%,
-    rgba(0, 0, 0, 0.55) 55%,
-    transparent 80%
-  );
+      ellipse at 50% 45%,
+      #000 0%,
+      rgba(0, 0, 0, 0.6) 58%,
+      transparent 82%
+    ),
+    linear-gradient(180deg, transparent 0%, #000 16%);
+  mask-composite: intersect;
   pointer-events: none;
 }
 
