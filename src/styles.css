@@ -716,14 +716,14 @@ ol {
   background:
     radial-gradient(
       ellipse at 50% 38%,
-      rgba(255, 255, 255, 0.14) 0%,
-      rgba(255, 255, 255, 0.04) 30%,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 30%,
       rgba(255, 255, 255, 0) 60%
     ),
     radial-gradient(
       ellipse at 50% 45%,
-      rgba(0, 0, 0, 0) 25%,
-      rgba(0, 0, 0, 0.85) 100%
+      rgba(0, 0, 0, 0) 35%,
+      rgba(0, 0, 0, 0.6) 100%
     );
   pointer-events: none;
 }
