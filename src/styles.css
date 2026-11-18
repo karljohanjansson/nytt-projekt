@@ -1128,7 +1128,18 @@ ol {
 /* ---------- Training ---------- */
 
 .training.section--dark {
-  background: #142a1e;
+  background: #1d6a4a;
+}
+
+.training.section--dark .training__copy p,
+.training.section--dark .training__list-title,
+.training.section--dark .course-list a,
+.training.section--dark .course-list a::after {
+  color: #ffffff;
+}
+
+.training.section--dark .course-list li {
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .training__card {
@@ -1184,7 +1195,15 @@ ol {
 }
 
 .course-list a::after {
-  content: "→";
+  content: "";
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 9.4h10V3.8L22 12l-10 8.2v-5.6H2z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 9.4h10V3.8L22 12l-10 8.2v-5.6H2z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
   color: var(--muted-2);
   transition: transform 0.2s ease, color 0.2s ease;
 }
