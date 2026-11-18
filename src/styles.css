@@ -792,6 +792,10 @@ body[data-page="start"] .hero__top {
   padding-top: calc(var(--header-h) + clamp(3.5rem, 7vw, 6rem));
 }
 
+body[data-page="start"] .hero__smoke {
+  top: var(--header-h);
+}
+
 body[data-page="start"] .header:not(.is-scrolled) {
   background: rgba(0, 0, 0, 0.3);
 }
