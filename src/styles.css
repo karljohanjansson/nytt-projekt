@@ -2527,10 +2527,12 @@ a.contact-row__value:hover {
   }
 
   .nav__sub-toggle {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
     border: 0;
     margin-left: auto;
+    margin-right: 0;
+    transform: translateX(0.5rem);
     color: var(--muted);
   }
 
