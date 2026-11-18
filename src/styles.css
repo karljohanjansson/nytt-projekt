@@ -819,7 +819,7 @@ body[data-page="start"] .hero__bg {
 }
 
 body[data-page="start"] .hero__smoke {
-  top: var(--header-h);
+  top: 0;
 }
 
 body[data-page="start"] .header:not(.is-scrolled) {
