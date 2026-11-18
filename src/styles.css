@@ -736,9 +736,9 @@ ol {
   inset: 0;
   background-image: url("/assets/images/hero-bg.webp");
   background-repeat: no-repeat;
-  background-position: 50% 72%;
-  background-size: 260% auto;
-  opacity: 0.68;
+  background-position: 50% 100%;
+  background-size: 250% auto;
+  opacity: 0.55;
   filter: brightness(0.6) saturate(0.85) contrast(1.05);
   -webkit-mask-image: radial-gradient(
       ellipse at 50% 45%,
